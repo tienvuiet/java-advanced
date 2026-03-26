@@ -26,7 +26,7 @@ public class FlashSaleService {
                 // tao order
                 String orderSQL = "insert into Orders(user_id, total_amount) values (?, ?)";
                 PreparedStatement orderStmt = con.prepareStatement(orderSQL, Statement.RETURN_GENERATED_KEYS);
-                //Statement.RETURN_GENERATED_KEYS lấy id vừa tạo tỏng bọ nhớ  order
+                //Statement.RETURN_GENERATED_KEYS lấy id vừa tạo order
                 orderStmt.setInt(1, userId);
                 orderStmt.setDouble(2, price * quantity);
                 orderStmt.executeUpdate();
